@@ -1,0 +1,16 @@
+module sw_tb();
+    reg [7:0]sw;
+    wire [7:0]led;
+        sw_led inst1(.sw(sw),.led(led));
+            initial
+                begin
+                    sw=8'b11110000;
+                    #20
+                    sw=8'b00001111;
+                    #20
+                    sw=8'b10101010;
+                    #20
+                    sw=8'b11000110;
+                    $finish;
+                end
+endmodule
